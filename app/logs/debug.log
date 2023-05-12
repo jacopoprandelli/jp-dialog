@@ -1,0 +1,67 @@
+2023-05-12 12:47:28,613 [werkzeug] [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.2.233:5000
+2023-05-12 12:47:28,616 [werkzeug] [INFO] [33mPress CTRL+C to quit[0m
+2023-05-12 12:47:43,525 [app] [ERROR] Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Jacopo\Workspace\aibootcamp\test_flask\app\routes.py", line 14, in index
+    return render_template('index.html')
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Jacopo\Workspace\aibootcamp\test_flask\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Jacopo\Workspace\aibootcamp\test_flask\app\templates\base.html", line 18, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Jacopo\Workspace\aibootcamp\test_flask\app\templates\index.html", line 10, in block 'content'
+    <a href="{{ url_for('view', table='werke')}}" class="btn btn-success m-2">Werke</a>
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\flask\app.py", line 2031, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\flask\app.py", line 2020, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "C:\Users\Jacopo\miniconda3\envs\aibootcamp\lib\site-packages\werkzeug\routing\map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'view' with values ['table']. Did you mean 'index' instead?
+2023-05-12 12:47:43,558 [werkzeug] [INFO] 127.0.0.1 - - [12/May/2023 12:47:43] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-05-12 12:47:43,799 [werkzeug] [INFO] 127.0.0.1 - - [12/May/2023 12:47:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-05-12 12:49:13,227 [werkzeug] [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.2.233:5000
+2023-05-12 12:49:13,227 [werkzeug] [INFO] [33mPress CTRL+C to quit[0m
+2023-05-12 12:49:17,011 [werkzeug] [INFO] 127.0.0.1 - - [12/May/2023 12:49:17] "GET / HTTP/1.1" 200 -
+2023-05-12 12:49:17,256 [werkzeug] [INFO] 127.0.0.1 - - [12/May/2023 12:49:17] "[33mGET /static/css/styles.css HTTP/1.1[0m" 404 -
+2023-05-12 12:49:45,280 [werkzeug] [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.2.233:5000
+2023-05-12 12:49:45,283 [werkzeug] [INFO] [33mPress CTRL+C to quit[0m
+2023-05-12 12:49:45,343 [werkzeug] [INFO] 127.0.0.1 - - [12/May/2023 12:49:45] "GET / HTTP/1.1" 200 -
+2023-05-12 12:49:45,586 [werkzeug] [INFO] 127.0.0.1 - - [12/May/2023 12:49:45] "[33mGET /static/css/styles.css HTTP/1.1[0m" 404 -
+2023-05-12 13:04:40,231 [werkzeug] [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.2.233:5000
+2023-05-12 13:04:40,231 [werkzeug] [INFO] [33mPress CTRL+C to quit[0m
+2023-05-12 13:04:46,341 [werkzeug] [INFO] 127.0.0.1 - - [12/May/2023 13:04:46] "[33mGET /static/css/styles.css HTTP/1.1[0m" 404 -
+2023-05-12 11:09:56,420 [werkzeug] [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2023-05-12 11:09:56,456 [werkzeug] [INFO] [33mPress CTRL+C to quit[0m
+2023-05-12 11:10:09,231 [werkzeug] [INFO] 172.18.0.1 - - [12/May/2023 11:10:09] "GET / HTTP/1.1" 200 -
+2023-05-12 11:10:09,417 [werkzeug] [INFO] 172.18.0.1 - - [12/May/2023 11:10:09] "[33mGET /static/css/styles.css HTTP/1.1[0m" 404 -
