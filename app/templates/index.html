@@ -1,13 +1,25 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Quickstart</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
 
-{% block title %}Home{% endblock %}
-
-{% block content %}
-
-<h1 class="text-center">Dialog gesteuerte Ausfüllen von Formulardaten</h1>
-
-
-
-
-
-{% endblock %}
+<body>
+  <!--<img src="{{ url_for('static', filename='dog.png') }}" class="icon" />!-->
+  <h3>My Form</h3>
+  {% if result %}
+  <p>{{ result }}</p>
+<!--  <div class="result">{{ result }}</div> !-->
+  {% endif %}
+  <form action="/" method="post">
+    <input type="text" name="user_input" placeholder="Your answer" required />
+    <input type="submit" value="Send" />
+  </form>
+  <form action="/table" method="post">
+    <input type="submit" value="Show me table" />
+  </form>
+</body>
