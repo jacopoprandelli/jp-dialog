@@ -1,13 +1,68 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
 
-{% block title %}Home{% endblock %}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid justify-content-center">
+            <h1 class="navbar-brand text-white" href="#">Dialog gesteuertes Ausfüllen von Formulardaten</h1>
+        </div>
+    </nav>
+</header>
 
-{% block content %}
+<div class="container mt-3">
+    {% for message in message_list%}
+    {% if message.role == 'user' %}
+    <div class="row justify-content-end mt-2">
+        <div class="col-md-auto">
+            <div class="media">
+                <div class="media-body">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <div class="card-text">{{message.msg}}</div>
+                        </div>
+                    </div>
+                </div>
+                <img src={{ url_for('static', filename='img/user.webp' ) }} alt="user"
+                style="width: 45px; height: 45px;" class="ml-3">
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="row justify-content-start mt-2">
+        <div class="col-md-auto">
+            <div class="media">
+                <img src={{ url_for('static', filename='img/assistant.webp' ) }} alt="assistant"
+                style="width: 45px; height: 45px;" class="mr-3">
+                <div class="media-body">
+                    <div class="card bg-light text-black">
+                        <div class="card-body">
+                            {% autoescape false %}
+                                <div class="card-text">{{message.msg}}</div>
+                            {% endautoescape %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
 
-<h1 class="text-center">Dialog gesteuerte Ausfüllen von Formulardaten</h1>
-
-
-
-
-
+<footer class="bg-light fixed-bottom promptinput">
+    <form action="/" method="post">
+        <div class="row justify-content-md-center mb-2 mt-2 ml-6 mr-6">
+            
+            <div class="col-6">
+                <input type="text" name="user_input" class="form-control" placeholder="Enter youre Feedback" required>
+            </div>
+            <div class="col-md-auto">
+                <input class="btn btn-primary" type="submit" value="Send">
+            </div>
+        </div>
+    </form>
+</footer>
+</header>
 {% endblock %}
+</nav>
+</header>
